@@ -1,0 +1,16 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  {% for post in object_list %}
+    <div class="post-entry">
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.description }}</p>
+      <img src="{{post.image.url}}" alt="изображение">
+        <p>{{ post.content }} </p>
+        <p>{{ post.keywords }} </p>
+        <p>{{ post.updated }} </p>
+    </div>
+  {% endfor %}
+{% endblock content %}
+

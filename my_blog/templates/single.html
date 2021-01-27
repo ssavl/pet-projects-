@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>{{ post.title }}</title>
+<meta name="description" content="{{ post.description }}"/>
+<meta name="keywords" content="{{ post.keywords }}"/>
+{% endblock %}
+ 
+{% block body %}
+  {% if post.visible %}
+    <h1>{{ post.title }}</h1>
+    <img src="{{ post.image.url }}" alt="изображение">
+    <p>{{ post.content }}</p>
+  {% else %}
+    <p>Страница не найдена</p>
+  {% endif %}
+{% endblock %}
